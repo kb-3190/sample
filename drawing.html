@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing</title>
+</head>
+<body>
+    <canvas id="canvas" class="canvas"></canvas>
+    <p id="x" class="x">X: </p>
+    <p id="y" class="y">Y: </p>
+    <style>
+        .canvas {
+            width: 400px;
+            height: 400px;
+            border: solid 1px;
+        }
+    </style>
+    <script>
+        var canvas = document.getElementById('canvas')
+        var context = canvas.getContext('2d')
+        var x;
+        var y;
+        var pX = document.getElementById('x');
+        var pY = document.getElementById('y');
+
+        canvas.addEventListener('mouseover', function (p) {
+            x = p.clientX;
+            y = p.clientY;
+            pX.textContent = "X: " + x;
+            pY.textContent = "Y: " + y;
+        })
+    </script>
+</body>
+</html>
